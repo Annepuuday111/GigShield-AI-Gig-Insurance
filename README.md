@@ -1,315 +1,314 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/Architecture-Microservices-blueviolet?style=for-the-badge" alt="Architecture" />
-  <img src="https://img.shields.io/badge/Framework-Spring_Boot_3-6db33f?style=for-the-badge" alt="Framework" />
-  <br/><br/>
-  
-  <h1 style="color: #1a365d;">🛡️ GigShield: AI-Powered Gig Economy Insurance Ecosystem 🛡️</h1>
-  
-  <p style="color: #2d3748; font-size: 1.25em;"><b>Empowering India's Delivery Partners Through Automated Parametric Finance & Advanced Risk Processing</b></p>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF6B6B,35:FFA94D,70:4DABF7,100:845EF7&height=200&section=header&text=GigShield&fontSize=44&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=AI-powered%20parametric%20insurance%20for%20gig%20delivery%20workers&descSize=16&descAlignY=58" width="100%"/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=845EF7&center=true&vCenter=true&width=700&lines=Weekly+cover+for+delivery+partners;AI+risk-based+premium+pricing;Auto-filed+claims+on+weather+triggers;Fraud+scoring+%2B+instant+wallet+payouts" alt="Typing SVG"/>
+
+<br/>
+
+<img src="https://img.shields.io/badge/React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
+<img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"/>
+<img src="https://img.shields.io/badge/Java%2017-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
+<img src="https://img.shields.io/badge/Spring%20Boot%203-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot"/>
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase"/>
+<img src="https://img.shields.io/badge/Razorpay-0C2451?style=for-the-badge&logo=razorpay&logoColor=white" alt="Razorpay"/>
+
+<br/>
+
+<img src="https://img.shields.io/badge/Status-Active-20C997?style=for-the-badge" alt="Status"/>
+<img src="https://img.shields.io/github/stars/Annepuuday111/GigShield-AI-Gig-Insurance?style=for-the-badge&color=845EF7" alt="Stars"/>
+<img src="https://img.shields.io/github/last-commit/Annepuuday111/GigShield-AI-Gig-Insurance?style=for-the-badge&color=4DABF7" alt="Last Commit"/>
+<img src="https://img.shields.io/github/repo-size/Annepuuday111/GigShield-AI-Gig-Insurance?style=for-the-badge&color=FF6B6B" alt="Repo Size"/>
+
+<br/><br/>
+
+<a href="https://ai-gig-insurance-platform.vercel.app"><img src="https://img.shields.io/badge/🚀%20Live%20Demo-Open%20App-FF6B6B?style=for-the-badge" alt="Live Demo" height="40"/></a>
+
+<br/><br/>
+
+[About](#-about) • [Features](#-features) • [Tech Stack](#️-tech-stack) • [Architecture](#️-architecture) • [Getting Started](#-getting-started) • [Screenshots](#-screenshots) • [Author](#-author)
+
 </div>
 
----
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
-## 🎯 Main Purpose of the Project
+## 📖 About
 
-**GigShield** is an advanced, automated backend infrastructure specifically engineered to protect India's gig workers (Zomato and Swiggy delivery partners) against uncontrollable income loss caused by environmental and administrative disruptions. 
+**GigShield** is a parametric micro-insurance platform for India's gig delivery partners (Zomato, Swiggy, Amazon, Flipkart, Zepto, Dunzo and more). Workers buy a **weekly plan**, and a scheduled job checks each active policy against weather and disruption triggers. When a trigger fires, a claim is filed automatically; claims are verified with a Python AI service (including fraud scoring) and approved payouts land in the worker's in-app wallet.
 
-It uses **AI-driven parametric models** to automatically monitor weather patterns, dynamically compute localized premiums, evaluate fraud risks, and directly disperse financial relief to delivery partners when working conditions become unsafe or impossible — **all entirely autonomously without the worker needing to file a single manual claim.**
+The system is split into three services:
 
----
+- **`frontend/`** – React + Vite + Tailwind web app for workers and admins
+- **`backend/`** – Spring Boot 3 REST API (JWT security, MySQL, scheduler, email OTP, Razorpay)
+- **`ai-model/`** – FastAPI service for premium pricing, risk scoring, parametric trigger checks and fraud detection
 
-## 📸 Platform Previews (Output)
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
-Here is exactly what the integrated outputs look like for the administrators and the delivery workers utilizing the platform:
+## ✨ Features
+
+### 🛵 For delivery workers
+- 📝 **Sign up with email OTP** or **Google sign-in** (Firebase Auth), with platform and location (state / district) captured at registration
+- 🛡️ **Weekly insurance plans** with AI-recommended plan and risk-adjusted premium
+- 💳 **Payments** via Razorpay checkout or UPI / other methods recorded for admin approval
+- 🤖 **Automatic parametric claims** – an hourly job checks active subscriptions against plan triggers (rainfall, heat, wind, AQI, etc.)
+- 🧾 **Manual situation requests** – file a claim that is AI-verified and auto-approved or flagged
+- 👛 **Wallet** credited on approved claims, with payment history
+- 📊 **AI insights & reports** – risk score, weather snapshot, triggers and activity charts
+- 🔔 **Notifications** and 💬 **support chat** with the admin team
+- 🎨 Dashboard themed to the worker's delivery platform
+
+### 👑 For admins
+- Manage users, plans (premium, coverage, parametric triggers) and partner platforms
+- Review, approve or reject claims and payments
+- Insurance-fund wallet overview and weather report
+- Answer user support queries
+
+### 🧠 AI service (`ai-model/main.py`)
+- Risk score from platform, state, season and tenure → premium multiplier
+- Parametric trigger evaluation including custom per-plan triggers
+- Rule-based fraud scoring (duplicate window, missing subscription, location mismatch, weather corroboration, …)
+- Deterministic mock weather per location/day for repeatable demos
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+## 🛠️ Tech Stack
 
 <div align="center">
-  <b>1. 🌍 Public Landing Page</b><br>
-  <i>(Public-facing portal highlighting all supported gig-delivery platforms like Zomato, Swiggy, and Amazon)</i><br>
-  <img src="assets/landing_page.png" alt="Platform Landing Page Output" width="850" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; margin-bottom: 25px; box-shadow: 0px 10px 15px rgba(0,0,0,0.1);"/>
-  <br><br>
 
-  <b>2. 👑 Comprehensive Admin Panel</b><br>
-  <i>(Monitors real-time macro metrics, active AI-fraud flagged lists, and global wallet funds)</i><br>
-  <img src="assets/admin_dashboard.png" alt="Admin Dashboard Output" width="850" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; margin-bottom: 25px; box-shadow: 0px 10px 15px rgba(0,0,0,0.1);"/>
-  <br><br>
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,java,spring,mysql,python,fastapi,firebase,docker&theme=light" alt="Tech icons"/>
 
-  <b>3. 🛵 Delivery Worker Hub (e.g. Zomato Theming)</b><br>
-  <i>(Live wallet balances, active policy coverages, and algorithmic risk assessments dynamically displayed)</i><br>
-  <img src="assets/user_dashboard.png" alt="User Dashboard Output" width="850" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; margin-bottom: 25px; box-shadow: 0px 10px 15px rgba(0,0,0,0.1);"/>
-  <br><br>
-
-  <b>4. ⚡ Instant Platform Registration</b><br>
-  <i>(Frictionless onboarding capturing precise district coordinates to feed directly into the Python AI pricing models)</i><br>
-  <img src="assets/register.png" alt="Sign Up Form Output" width="850" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; margin-bottom: 25px; box-shadow: 0px 10px 15px rgba(0,0,0,0.1);"/>
-  <br><br>
-
-  <b>5. 🔐 Secure OTP Login Interface</b><br>
-  <i>(SMTP-powered dual-factor barrier protecting sensitive financial wallet disbursements)</i><br>
-  <img src="assets/login.png" alt="Login Form Output" width="850" style="border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; margin-bottom: 10px; box-shadow: 0px 10px 15px rgba(0,0,0,0.1);"/>
 </div>
 
----
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | ![React](https://img.shields.io/badge/React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) ![React Router](https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white) |
+| **Backend** | ![Java](https://img.shields.io/badge/Java%2017-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot%203.2-6DB33F?style=for-the-badge&logo=springboot&logoColor=white) ![Spring Security](https://img.shields.io/badge/Spring%20Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white) |
+| **Database** | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) ![Hibernate](https://img.shields.io/badge/Spring%20Data%20JPA-59666C?style=for-the-badge&logo=hibernate&logoColor=white) |
+| **AI Service** | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white) |
+| **Auth & Integrations** | ![Firebase](https://img.shields.io/badge/Firebase%20Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black) ![Razorpay](https://img.shields.io/badge/Razorpay-0C2451?style=for-the-badge&logo=razorpay&logoColor=white) ![Gmail SMTP](https://img.shields.io/badge/SMTP%20OTP-EA4335?style=for-the-badge&logo=gmail&logoColor=white) |
+| **DevOps** | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white) |
 
-## 🛠️ Tools & Technologies Used
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
-We assembled this application using a modern, multi-layered stack designed for enterprise-grade scaling, fault-tolerance, and financial security.
-
-### 💻 Frontend (User Interface)
-* **React.js (via Vite):** The primary structural dashboard built for immense blazing-fast speeds and reusable component modularity.
-* **Tailwind CSS:** Utilized for creating vivid, platform-adaptive theming (e.g., dynamically swapping UI colors to red for Zomato workers, and orange for Swiggy).
-* **Framer Motion:** Delivers smooth, satisfying micro-interaction animations such as wallet credits rolling in and live claim status transitions.
-
-### 🟨 Backend (Core API Layer)
-* **Java 17 & Spring Boot 3:** The heavy-lifting RESTful engine orchestrating the entire financial logic ecosystem and routing models.
-* **Spring Scheduler:** Handles autonomous 24/7 background cron-jobs like the `AutoClaimService` which polls algorithms every hour automatically.
-* **Spring Security & JWT:** Stateless security infrastructure barricading sensitive endpoints alongside JSON Web Tokens to bypass classical session vulnerabilities.
-
-### 💾 Database & Persistence
-* **MySQL 8.0:** The absolute source of truth. Maintains strict ACID-compliant transactional integrity specifically over high-risk financial payment ledgers.
-* **Hibernate (JPA):** The internal Object-Relational Mapping (ORM) layer effortlessly linking database schema structures directly into Java Entities.
-
-### 🐍 AI & Fraud Detection Engine
-* **Python 3.11:** The computational core of our intelligent modeling boundaries.
-* **FastAPI:** A high-octane API router deployed strictly to allow the Java backend to exchange data with the Python layer securely and instantly.
-* **Scikit-learn / Pandas:** Responsible for executing robust Machine Learning algorithms and risk engines to produce a highly accurate 0-100 `Fraud Score`.
-
-### ☁️ Integrations, SMTP & Payments
-* **OpenWeatherMap API:** The critical environmental data stream. Constantly polled to measure atmospheric triggers like local district rainfall depth or maximum severe heat thresholds.
-* **JavaMailSender (SMTP Integration):** Secures the environment by dispatching instantaneous Two-Factor One-Time Password (OTP) verification emails directly to workers.
-* **Razorpay Simulator API:** The mocked payment architecture processing high-speed premium deduction debits and instantaneous wallet indemnification credits.
-
----
-
-## 🏗️ The Models: Roles, Functions & Architecture
-
-Our database schema is highly interrelated and strictly constrained to prevent race conditions during money movements.
-
-### 👤 1. `User` Model
-* **Core Role:** The central ledger capturing the gig worker's identity, geographic location, and live funds.
-* **How It Works:** Tracks vital markers like `platform` (Zomato/Swiggy), specific boundaries (`district`, `mandal`), and acts as the vault holding the user's `walletBalance`. It actively facilitates OTP challenge checks for 2FA.
-
-### 👑 2. `Admin` Model
-* **Core Role:** High-clearance supervisor entity ensuring policy stabilization.
-* **How It Works:** Admins bypass standard security gates to tweak the system. They adjust parametric threshold limits (e.g., maximum temperature bands) and approve/reject claims that the Python AI flagged as mathematically suspicious. 
-
-### 🛡️ 3. `Plan` Model
-* **Core Role:** Blueprint mapping out risk vs. coverage tiers (Starter, Smart, Pro, Max).
-* **How It Works:** Holds standard properties like `weeklyPremium` and `coverageAmount`. It acts as the seed which the AI Risk engine manipulates to produce a localized user premium variant.
-
-### 📜 4. `Subscription` Model
-* **Core Role:** The active risk-contract securely tying a `User` to a `Plan` for a specific 7-day window.
-* **How It Works:** Mitigates platform abuse by enforcing strict chronological validity limits (`startDate` and `endDate`). If a disaster hits naturally, the server strictly references only these active binding contracts.
-
-### 🚨 5. `ClaimRequest` Model
-* **Core Role:** Forensic record documenting exactly when and how the system reacted to a disaster.
-* **How It Works:** Auto-instantiated during a threshold breach. It embeds the exact reason code (e.g. `RAINFALL_EXCEEDED`), maps the generated `fraudScore`, and determines the payout queue status (`APPROVED` or `FLAGGED`).
-
-### 💸 6. `Payment` Model
-* **Core Role:** The immutable financial tracking block representing money in motion.
-* **How It Works:** Safely regulates all `CREDIT` and `DEBIT` directives utilizing database level pessimistic locks to protect parallel dual-entry ledger accounting avoiding phantom additions and deductions.
-
-### 🔔 7. `Notification` Model
-* **Core Role:** Asynchronous external communication router.
-* **How It Works:** Immediately pushes messages advising users of completed transactions or urgent subscription renewals.
-
----
-
-## 🔄 The Comprehensive Working Flow
-
-This backend operates actively rather than reactively through rigorous background task loops. 
-
-1. **User Onboarding & Micro-Pricing:**
-   * Delivery partner opens an account selecting their home district. 
-   * The Risk microservice contacts the AI Engine: *"What is the risk severity rating for Chennai during this week?"* 
-   * AI interpolates multi-year flood models generating a localized `Risk Multiplier`. The Java API calculates the premium; the User purchases a `Subscription`.
-
-2. **The 24/7 AI Watchdog (Auto-Claim Initialization):**
-   * A Spring `@Scheduled` worker job automatically initializes every 60 minutes.
-   * It gathers arrays of active subscriptions globally and streams bulk API requests to `OpenWeatherMap`.
-   * It logically assesses: *"Did the Rain volume reported in Bengaluru just exceed our 65mm critical line?"* 
-
-3. **Fraud Anomaly Check:**
-   * Whenever bounds are broken, the Java Engine instantaneously generates a pending `ClaimRequest`.
-   * It pushes the footprint to the Python FastAPI logic which assesses velocity logic, GPS telemetry overlap, and user behavioral claim history.
-   * A Risk Score (0-100) is returned. 
-
-4. **Instant Liquidity Generation:**
-   * If the rating confirms high-fidelity precision (Fraud Score < 20), a transaction block opens.
-   * A `Payment` moves the money strictly to the specific User's `walletBalance`.
-   * A `Notification` hits resolving the process: *"Disruption registered. Your GigShield wallet has been credited with ₹1,200."*
-
----
-
-## 🔐 Comprehensive Deep-Layer Security
-
-We architected an enterprise-level, multi-staged security environment natively immune to conventional interception threats.
-
-* 🛡️ **JWT Stateless Context Framework:**
-  The server carries completely *zero state*. Cryptographically signed JSON Web Tokens process authentication payload data reducing server cluster memory waste and nullifying dangerous CSRF (Session-hijacking) hacks entirely.
-* 🛡️ **`JwtAuthenticationFilter` Barrier Firewall:**
-  Our core file `SecurityConfig.java` guarantees every single incoming REST payload runs a gauntlet before invoking logic variables. The filter ensures tokens hold signature structural validity before injecting credentials into the actual thread memory pool.
-* 🛡️ **Military-Grade Hashing Logic:**
-  All user identification relies on `BCryptPasswordEncoder`. Cleartext passwords and system inputs undergo intense iterative hashing to completely obscure traces in the database.
-* 🛡️ **OTP Cryptographic Injection:**
-  Extremely sensitive modifications are barricaded via temporal logic checks where users must complete an OTP check bound by a strict database column timestamp (`otpExpiry`).
-* 🛡️ **Role-Based Access Control Filtering (RBAC):**
-  Internal mappings differentiate standard UI worker flows dynamically versus Administrative routes. Only bearer tokens injecting the `ROLE_ADMIN` context unlock core administrative tools (`.hasRole("ADMIN")`).
-* 🛡️ **Cors Web Fortification:**
-  We rigidly enforce wildcard restrictions blocking `Access-Control-Allow-Origin: *` to authenticated streams.
-
----
-
-## 📂 Complete Project Structure & Modification Guide
-
-If you are a developer looking to understand the codebase or need to modify the internal logic, here is an explicit map of the project structure indicating **exactly where you need to go to make changes**:
+## 🏗️ Architecture
 
 ```text
-ai-gig-insurance-platform/
-│
-├── 🟨 backend/                       # ➔ Java Spring Boot Core API
-│   ├── pom.xml                       # Dependency management (Java)
-│   └── src/main/
-│       ├── java/com/example/aiinsurance/
-│       │   ├── controller/           # API routes (Change here to add new REST endpoints)
-│       │   ├── model/                # Database entities (Change here to add new columns to User/Plan)
-│       │   ├── repository/           # Database queries (JPA interfaces)
-│       │   ├── security/             # Security filters (Modify JwtAuthenticationFilter or SecurityConfig here)
-│       │   └── service/              # ➔ Core Business Logic (Modify AutoClaimService scheduler here!)
-│       │
-│       └── resources/
-│           └── application.properties # ➔ 🚨 CRITICAL CHANGE REQUIRED: Update your local MySQL credentials here!
-│
-├── 🐍 ai-model/                      # ➔ Python AI & Fraud Detection API
-│   ├── requirements.txt              # Dependency management (Python)
-│   ├── main.py                       # FastAPI entry point (Change to add new Python AI endpoints)
-│   └── logic/                        # Scikit-learn Risk Models & Fraud API integrations
-│       # ➔ Setup required: You must inject the OWM_API_KEY environment variable to use the weather models.
-│
-├── 💻 frontend/                      # ➔ React UI Dashboard
-│   ├── package.json
-│   └── src/
-│       ├── components/               # React UI elements
-│       └── utils/api.js              # ➔ Setup required: Change Axios base URLs here to point to Prod if deploying.
-│
-└── 📄 README.md                      # Architecture documentation (You are here!)
+ React + Vite (frontend, :5173)
+        │  REST + JWT   (VITE_API_URL)
+        ▼
+ Spring Boot API (backend, :4000) ──── MySQL (JPA / Hibernate)
+        │   ├── AutoClaimService  @Scheduled hourly: check active subscriptions
+        │   │                     @Scheduled 30 min: re-verify pending claims
+        │   ├── EmailService      OTP & notification emails (SMTP)
+        │   └── RazorpayService   orders & signature verification
+        │  HTTP (AI_SERVICE_URL)
+        ▼
+ FastAPI AI service (ai-model, :8000)
+        /ai/premium · /ai/risk · /ai/fraud/detect · /ai/parametric/check
+        /ai/weather · /ai/dashboard · /ai/plans/recommend · /ai/fraud/stats
 ```
 
-### 📍 Where exactly do I go to change things?
-* **To change Database Credentials:** ➔ Go straight to `backend/src/main/resources/application.properties` and replace the username/password.
-* **To configure Email/SMTP (for OTPs):** ➔ Open `backend/src/main/resources/application.properties` and update the `spring.mail.*` attributes with your Gmail App Password.
-* **To configure Payments (Razorpay):** ➔ Open `backend/src/main/resources/application.properties` and paste your Razorpay `key_id` and `secret`.
-* **To add/modify a Model (like adding a 'License Plate' to User):** ➔ Change `backend/src/main/java/com/example/aiinsurance/model/User.java`.
-* **To modify the auto-claim scheduler frequency:** ➔ Adjust the `@Scheduled` tag inside `backend/src/main/java/com/example/aiinsurance/service/AutoClaimService.java`.
-* **To tighten or loosen CORS Security:** ➔ Go to `backend/src/main/java/com/example/aiinsurance/security/SecurityConfig.java`.
+**Claim flow:** worker buys a 7-day subscription → hourly scheduler calls `/ai/parametric/check` for the worker's location and plan triggers → if a trigger fires, a claim is filed automatically and the worker is notified. Manually filed situation requests are scored via `/ai/fraud/detect` and approved or flagged for admin review. Approved claims are credited to the worker's wallet from the insurance fund. Plans expire automatically after 7 days.
 
----
+### 📂 Project Structure
 
-## 💻 Instructions to Run & Launch Project (Pin-by-Pin)
-
-For Users and Reviewers configuring the GigShield Backend instance for deployment or development: Follow these steps accurately.
-
-### ⚙️ Step 1. Base Requirements Installation
-Before setting up, ensure your workstation holds the fundamental interpreters.
-- [Java Development Kit 17+](https://adoptium.net/temurin/releases/) installed.
-- [Python 3.11+](https://www.python.org/downloads/) installed.
-- [MySQL Server 8.0+](https://dev.mysql.com/downloads/) installed and operating on port `3306`.
-
-### 🗄️ Step 2. Database, SMTP, & Payment Configuration
-**Important Variables to change:** You must allocate the proper structural DB and supply API keys prior to booting the program. 
-
-Open your local MySQL CLI (or client like DBeaver/Workbench):
-```sql
-CREATE DATABASE gigshield;
+```text
+GigShield-AI-Gig-Insurance/
+├── frontend/                     # React + Vite + Tailwind
+│   ├── src/
+│   │   ├── pages/                # Landing, Login, Register, Dashboard, Plans, Payment,
+│   │   │                         # Claims, Insights, Reports, Notifications, ChatSupport,
+│   │   │                         # Profile, AdminDashboard
+│   │   ├── components/           # Navbar, Sidebar, BottomNav, cards, ProtectedRoute ...
+│   │   ├── layouts/MainLayout.jsx
+│   │   ├── api.js                # REST client (VITE_API_URL)
+│   │   └── firebase.js           # Google sign-in
+│   └── package.json
+├── backend/                      # Spring Boot 3 (Java 17)
+│   ├── src/main/java/com/example/aiinsurance/
+│   │   ├── controller/           # Auth, Plan, Subscription, ClaimRequest, PaymentGateway,
+│   │   │                         # Admin, AI, Notification, Partner, Query ...
+│   │   ├── model/                # User, Admin, Plan, Subscription, ClaimRequest, Payment,
+│   │   │                         # Notification, Partner, Query
+│   │   ├── repository/
+│   │   ├── security/             # JwtUtil, JwtAuthenticationFilter, SecurityConfig
+│   │   └── service/              # AutoClaimService, ClaimService, AIService, RazorpayService ...
+│   ├── src/main/resources/application.properties
+│   ├── Dockerfile
+│   └── pom.xml
+├── ai-model/                     # FastAPI AI service
+│   ├── main.py
+│   ├── requirements.txt
+│   └── Dockerfile
+├── docs/                         # architecture.md, workflow.md
+├── assets/                       # Screenshots & platform banners
+├── start.sh                      # One-command startup (macOS / Linux)
+└── start.bat                     # One-command startup (Windows)
 ```
 
-**Navigate to:** `GigShield/backend/src/main/resources/application.properties`
-Modify the configuration rigorously mapping your personal local DB parameters, Email server, and Payment sandbox keys:
-```properties
-## !! 1. CHANGE THESE DATABASE STRINGS !! ##
-spring.datasource.url=jdbc:mysql://localhost:3306/gigshield
-spring.datasource.username=YOUR_ACTUAL_MYSQL_USERNAME_HERE
-spring.datasource.password=YOUR_ACTUAL_MYSQL_PASSWORD_HERE
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
 
-## !! 2. CHANGE THESE SMTP (EMAIL) STRINGS !! ##
-# (Required if you want the OTP Registration and push notification emails to work)
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
-spring.mail.username=YOUR_GMAIL_ADDRESS@gmail.com
-# Use a 16-digit Google App Password, NOT your regular password!
-spring.mail.password=YOUR_GMAIL_APP_PASSWORD
+## 🚀 Getting Started
 
-## !! 3. CHANGE THESE PAYMENT STRINGS !! ##
-# (Required for simulated Razorpay claim money transfers)
-razorpay.api.key=YOUR_RAZORPAY_TEST_KEY_ID
-razorpay.api.secret=YOUR_RAZORPAY_TEST_SECRET
-```
+### Prerequisites
 
-### 🚀 Step 3. The Ultimate One-Click Startup (`start.sh` / `start.bat`)
+- Java 17+ and Maven
+- Node.js 18+ and npm
+- Python 3.9+
+- MySQL 8 running on port `3306`
+- (Optional) Gmail app password for OTP emails, Razorpay test keys, Firebase project for Google sign-in
 
-You don't need to manually start each service sequentially! We have provided an autonomous orchestration script that handles everything. 
+### 1. Clone
 
-**⚠️ Wait! Before running the script, you must verify your environment:**
-1. Open up a terminal and check that these commands return valid versions:
-   * `java -version` ➔ (Must be Java 17+)
-   * `mvn -v` ➔ (Maven must be accessible in your system PATH)
-   * `npm -v` ➔ (Node Package Manager must be installed for the React Frontend)
-   * `python --version` or `python3 --version` ➔ (Python must be accessible for the AI Engine)
-2. Ensure you have accurately changed the Database Credentials in `application.properties` (as outlined in Step 2).
-3. *(Mac/Linux only)* Make sure you grant the script executable permissions: 
-   ```bash
-   chmod +x start.sh
-   ```
-
-**Now, run the orchestration script!**
 ```bash
-# On macOS / Linux terminal
-./start.sh
-
-# On Windows (Command Prompt / PowerShell)
-start.bat
+git clone https://github.com/Annepuuday111/GigShield-AI-Gig-Insurance.git
+cd GigShield-AI-Gig-Insurance
 ```
 
-**What exactly happens when you run this script?**
-Instead of manually typing build commands, the script does the heavy lifting synchronously:
-1. 🧹 **Port Lock Cleanup:** It aggressively searches for and kills any frozen background processes blocking ports `4000`, `8000`, and `5173` to prevent startup collisions.
-2. 🤖 **AI Engine Virtualization:** It navigates to `ai-model/`, automatically generates an isolated Python Virtual Environment (`venv`), auto-installs `scikit-learn` & `FastAPI` dependencies quietly, and launches the AI server on **Port 8000**.
-3. 🖥️ **Java Spring Compilation:** It enters `backend/`, suppresses messy maven logs, executes a `mvn clean install` to build the `.jar`, generates your MySQL relational tables automatically, and binds the REST API to **Port 4000**.
-4. 🌐 **React UI Spinning:** It jumps into `frontend/`, executes a silent `npm install` for node modules, and boots the interactive user GUI to **Port 5173**.
-5. ⏳ **Live Health Monitoring:** It continuously pings the health endpoints of all three active services. Once it detects HTTP 200 OK statuses across the board, it outputs the master success checklist!
+### 2. Create the database
 
-### 🤝 Step 4. Integration Verification
-If successfully orchestrated by the automation script, you can visit the active hubs immediately:
-- **Frontend Dashboard:** ➔ `http://localhost:5173`
-- **Backend API Layer:** ➔ `http://localhost:4000/api/plans` 
-- **AI Fraud Visualizer (Swagger):** ➔ `http://localhost:8000/docs`
+```sql
+CREATE DATABASE ai_insurance;
+```
 
-> 🛑 **How to Stop?** To shut down the entire GigShield platform, simply press **`Ctrl+C`** exclusively within the terminal running the script. It will intercept the shutdown signal and gracefully terminate all three processes (Java, Python, Node) simultaneously without leaving hanging ports!
+### 3. Configure environment
 
----
+The backend reads these environment variables (see `backend/src/main/resources/application.properties`); export them in your shell before starting:
+
+```bash
+export SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/ai_insurance
+export SPRING_DATASOURCE_USERNAME=root
+export SPRING_DATASOURCE_PASSWORD=your_mysql_password
+export MAIL_USERNAME=your_email@gmail.com
+export MAIL_PASSWORD=your_gmail_app_password
+export RAZORPAY_KEY_ID=your_razorpay_test_key_id
+export RAZORPAY_KEY_SECRET=your_razorpay_test_secret
+export AI_SERVICE_URL=http://localhost:8000
+export FRONTEND_URL=http://localhost:5173
+```
+
+Create `frontend/.env`:
+
+```env
+VITE_API_URL=http://localhost:4000
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+### 4a. One-command start
+
+```bash
+chmod +x start.sh
+./start.sh        # macOS / Linux
+start.bat         # Windows
+```
+
+The script frees ports `8000`, `4000` and `5173`, creates a Python venv for the AI service, builds and runs the Spring Boot API, installs and starts the frontend. Press `Ctrl+C` to stop everything.
+
+### 4b. Or start each service manually
+
+```bash
+# AI service  → http://localhost:8000  (Swagger UI at /docs)
+cd ai-model
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+# Backend     → http://localhost:4000
+cd backend
+mvn spring-boot:run
+
+# Frontend    → http://localhost:5173
+cd frontend
+npm install
+npm run dev
+```
+
+On first start the backend creates a default admin account (see `AdminInitializer.java`) – change its credentials from the admin panel.
+
+### 🐳 Docker
+
+Both `backend/` and `ai-model/` include a `Dockerfile`:
+
+```bash
+docker build -t gigshield-backend ./backend
+docker build -t gigshield-ai ./ai-model
+```
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+## 📸 Screenshots
 
 <div align="center">
-  <h2>👨‍💻 Lead Developer & Designer</h2>
-  <p><i>Passionate about designing and building full-stack applications and websites, focusing on creating efficient, scalable, and user-friendly digital solutions that solve real-world problems.</i></p>
-  <h2><b>Annepu Uday Kumar</b></h2>
-  <p>📞 <b>Direct Contact:</b> +91 7075285071</p>
-  
-  <br/>
-  
-  <!-- Symmetric Contact Badges -->
-  <a href="mailto:annepuuday111@gmail.com">
-    <img src="https://img.shields.io/badge/Email-annepuuday111%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="http://annepuudaykumar.netlify.app/">
-    <img src="https://img.shields.io/badge/Portfolio-Visit_Website-38B2AC?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio" />
-  </a> 
-  <a href="https://www.linkedin.com/in/annepuudaykumar/">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://github.com/Annepuuday111">
-    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <br/><br/>
+
+**🌍 Landing Page**
+
+<img src="assets/landing_page.png" alt="Landing page" width="850"/>
+
+**🛵 Worker Dashboard**
+
+<img src="assets/user_dashboard.png" alt="Worker dashboard" width="850"/>
+
+**👑 Admin Dashboard**
+
+<img src="assets/admin_dashboard.png" alt="Admin dashboard" width="850"/>
+
+**📝 Register**
+
+<img src="assets/register.png" alt="Register page" width="850"/>
+
+**🔐 Login**
+
+<img src="assets/login.png" alt="Login page" width="850"/>
+
 </div>
 
----
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+## 🗺️ Roadmap
+
+- [x] Weekly plans with AI-adjusted premiums
+- [x] Scheduled parametric auto-claims & fraud scoring
+- [x] Razorpay payments and wallet payouts
+- [ ] Replace mock weather with a live weather / AQI API
+- [ ] ML-based fraud model trained on claim history
+- [ ] Mobile app for delivery partners
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%">
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### Annepu Uday Kumar
+
+<a href="https://github.com/Annepuuday111"><img src="https://img.shields.io/badge/GitHub-Annepuuday111-845EF7?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+<a href="https://annepuudaykumar.netlify.app"><img src="https://img.shields.io/badge/Portfolio-Visit-FF6B6B?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio"/></a>
+
+</div>
+
+<br/>
+
+<div align="center">⭐ If you like this project, give it a star!</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:845EF7,35:4DABF7,70:FFA94D,100:FF6B6B&height=120&section=footer" width="100%"/>
